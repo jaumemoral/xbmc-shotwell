@@ -14,3 +14,9 @@ Known issues
 Install
 
     Unzip plugin in "addons" folder (in Linux in $HOME/.xbmc) 
+
+Older Versions
+
+    Older versions are hosted in Google Code, but current repository is Github.
+
+    https://code.google.com/p/xbmc-shotwell/downloads/list
