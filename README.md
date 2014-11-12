@@ -17,4 +17,5 @@ Install
 Older Versions
 
 * Older versions are hosted in Google Code, but current repository is Github.
+
   https://code.google.com/p/xbmc-shotwell/downloads/list
