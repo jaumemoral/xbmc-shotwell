@@ -13,7 +13,7 @@ Known issues
 
 Install
 
-    Unzip plugin in "addons" folder (in Linux in $HOME/.xbmc) 
+    Unzip plugin and copy "plugin.image.shotwell" in "addons" folder (in Linux in $HOME/.xbmc) 
 
 Older Versions
 
