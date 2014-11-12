@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <setting label="30004" type="lsep"/>
+    <setting id="path_db" type="file" label="30006" default="" />
+    <setting id="path_db2" type="file" label="30007" default="" />
+  <setting label="30005" type="lsep"/>
+    <setting id="path_thumbs" type="folder" label="30006" default="" />
+    <setting id="path_thumbs2" type="folder" label="30007" default="" />
+</settings>

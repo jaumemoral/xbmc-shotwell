@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Esdeveniments</string>
+    <string id="30001">Etiquetes</string>
+    <string id="30002">Última importació</string>
+    <string id="30003">Senyalades</string>
+    <string id="30004">Path del fitxer de base de dades de Shotwell</string>
+    <string id="30005">Path del cache d'imatges de Shotwell</string>
+    <string id="30006">Path primari</string>
+    <string id="30007">Path secundari</string>
+</strings>

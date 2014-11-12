@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Events</string>
+    <string id="30001">Tags</string>
+    <string id="30002">Last import</string>
+    <string id="30003">Flagged</string>
+    <string id="30004">Shotwell database file path</string>
+    <string id="30005">Shotwell image cache path</string>
+    <string id="30006">Primary path</string>
+    <string id="30007">Secondary path</string>
+</strings>
