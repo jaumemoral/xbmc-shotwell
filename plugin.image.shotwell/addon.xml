@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.image.shotwell"
-    name="Shotwell" version="1.3.5" provider-name="jaume.moral">
-  <requires>
-    <import addon="xbmc.python" version="1.0"/>
-  </requires>
+    name="Shotwell" version="1.3.6" provider-name="jaume.moral">
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>image</provides>
   </extension>
@@ -13,3 +10,4 @@
     <platform>linux</platform>
   </extension>
 </addon>
+
