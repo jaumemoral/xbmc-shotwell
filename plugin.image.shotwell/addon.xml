@@ -8,6 +8,12 @@
     <summary lang="en">Shotwell pictures</summary>
     <description lang="en">Shotwell picture navigator</description>
     <platform>linux</platform>
+    <language/>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum/>
+    <website>http://github.com/jaumemoral/xbmc-shotwell/</website>
+    <source>http://github.com/jaumemoral/xbmc-shotwell/</source>
+    <email/>
+    <disclaimer/>
   </extension>
 </addon>
-
