@@ -12,7 +12,8 @@ Known issues
 
 Install
 
-* Unzip plugin and copy "plugin.image.shotwell" in "addons" folder (in Linux in $HOME/.xbmc) 
+* Go to System > Add-on manager and install from zip using the latest release
+* Also you get the latest source code and replace contents of the "plugin.image.shotwell" folder in ~/.kodi/addons
 
 Older Versions
 
