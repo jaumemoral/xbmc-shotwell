@@ -53,17 +53,14 @@ class Shotwell:
         sql = sql + " order by id"
         cursor = self.conn.cursor()
         rows = cursor.execute(sql)
-        l = []
-        for row in rows:
-            id = row[0]
-            filename = row[1]
-            l.append({
-                'id': id,
-                'name': os.path.basename(filename),
-                'filename': filename,
-                'icon': '%s/thumb%016x.jpg' % (self.thumbs128, id),
-                'thumbnail': '%s/thumb%016x.jpg' % (self.thumbs360, id)
-            })
+
+        l = list(
+            {'id': row[0],
+            'name': os.path.basename(row[1]),
+            'filename': row[1],
+            'icon': '%s/thumb%016x.jpg' % (self.thumbs128, row[0]),
+            'thumbnail': '%s/thumb%016x.jpg' % (self.thumbs360, row[0])}
+            for row in rows)
         cursor.close()
         return l
 
@@ -87,9 +84,7 @@ class Shotwell:
         thumbs.pop()
         # and transform to a decimal number list after converting it from
         # hexadecimal
-        l = []
-        for f in thumbs:
-            l.append(str(int(f[6:], 16)))
+        l = list(str(int(f[6:], 16)) for f in thumbs)
         return self.picture_list('select id, filename from phototable where id in (%s)' % (','.join(l)), flagged)
 
     def event_list(self):
