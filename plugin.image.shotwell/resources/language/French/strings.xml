@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Evenements</string>
+    <string id="30001">Etiquettes</string>
+    <string id="30002">Dernière Importation</string>
+    <string id="30003">Marquées</string>
+    <string id="30004">Fichier de base de données Shotwell</string>
+    <string id="30005">Repertoire du cache image de Shotwell</string>
+    <string id="30006">Chemin 1</string>
+    <string id="30007">Chemin 2</string>
+</strings>
