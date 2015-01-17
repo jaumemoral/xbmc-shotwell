@@ -47,7 +47,7 @@ class Shotwell:
             return thumbs
         return ""
 
-    def picture_list(self, condition="1=1", order="id", flagged=False):
+    def picture_list(self, condition="1=1", order="timestamp", flagged=False):
         select = 'select id, filename from phototable'
         if flagged:
             condition += " and flags=16"
