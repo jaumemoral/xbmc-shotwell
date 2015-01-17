@@ -47,10 +47,13 @@ class Shotwell:
             return thumbs
         return ""
 
-    def picture_list(self, sql, flagged=False):
+    def picture_list(self, condition="1=1", order="id", flagged=False):
+        select = 'select id, filename from phototable'
         if flagged:
-            sql += " and flags=16"
-        sql = sql + " order by id"
+            condition += " and flags=16"
+
+        sql = ' '.join([select, 'where', condition, 'order by', order])
+
         cursor = self.conn.cursor()
         rows = cursor.execute(sql)
 
@@ -61,17 +64,18 @@ class Shotwell:
             'icon': '%s/thumb%016x.jpg' % (self.thumbs128, row[0]),
             'thumbnail': '%s/thumb%016x.jpg' % (self.thumbs360, row[0])}
             for row in rows)
+
         cursor.close()
         return l
 
     def picture_list_flagged(self):
-        return self.picture_list('select id, filename from phototable where 1=1', True)
+        return self.picture_list(flagged=True)
 
     def picture_list_event(self, event_id, flagged):
-        return self.picture_list('select id, filename from phototable where event_id=%s' % (event_id), flagged)
+        return self.picture_list(condition="event_id=%s" % (event_id), flagged=flagged)
 
     def picture_list_last(self, flagged):
-        return self.picture_list('select id, filename from phototable where import_id = (select max(import_id) from phototable)', flagged)
+        return self.picture_list(condition="import_id = (select max(import_id) from phototable)", flagged=flagged)
 
     def picture_list_tag(self, tag_id, flagged):
         # get a comma separated thumbnail list from a database field
@@ -85,7 +89,7 @@ class Shotwell:
         # and transform to a decimal number list after converting it from
         # hexadecimal
         l = list(str(int(f[6:], 16)) for f in thumbs)
-        return self.picture_list('select id, filename from phototable where id in (%s)' % (','.join(l)), flagged)
+        return self.picture_list(condition='id in (%s)' % (','.join(l)), flagged=flagged)
 
     def event_list(self):
         cursor = self.conn.cursor()
