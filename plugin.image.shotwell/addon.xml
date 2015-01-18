@@ -6,7 +6,10 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Shotwell pictures</summary>
+    <summary lang="fr">Images Shotwell</summary>
+
     <description lang="en">Shotwell picture navigator</description>
+    <description lang="fr">Afficher les photos du gestionnaire de photos Shotwell</description>
     <platform>linux</platform>
     <language/>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
