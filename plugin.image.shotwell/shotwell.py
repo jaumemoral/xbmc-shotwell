@@ -48,21 +48,26 @@ class Shotwell:
         return ""
 
     def picture_list(self, condition="1=1", order="exposure_time", flagged=False):
-        select = 'select id, filename from phototable'
+
+        #select = 'select id, filename from phototable'
+        select = "select id, filename, exposure_time, category, event_id, flags, import_id " \
+                 "from(" \
+                 "select id, filename, exposure_time, 'photo' as category, event_id, flags, import_id from  phototable " \
+                 "union " \
+                 "select id, filename, exposure_time, 'video' as category, event_id, flags, import_id from videoTable) as a "
         if flagged:
             condition += " and flags=16"
 
         sql = ' '.join([select, 'where', condition, 'order by', order])
-
         cursor = self.conn.cursor()
         rows = cursor.execute(sql)
 
         l = list(
-            {'id': row[0],
+            {'id': row[0] if row[3] == 'photo' else row[0]*(-1),
             'name': os.path.basename(row[1]),
             'filename': row[1],
-            'icon': '%s/thumb%016x.jpg' % (self.thumbs128, row[0]),
-            'thumbnail': '%s/thumb%016x.jpg' % (self.thumbs360, row[0])}
+            'icon': '%s/thumb%016x.jpg' % (self.thumbs128, row[0]) if row[3] == 'photo' else '%s/video-%016x.jpg' % (self.thumbs128, row[0]),
+            'thumbnail': '%s/thumb%016x.jpg' % (self.thumbs360, row[0]) if row[3] == 'photo' else '%s/video-%016x.jpg' % (self.thumbs360, row[0]) }
             for row in rows)
 
         cursor.close()
